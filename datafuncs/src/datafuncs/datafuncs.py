@@ -108,7 +108,7 @@ def mode(data):
         return mode
     
 def Help():
-    print(".mode(data) - Returns the mean of the list data\n")
+    print(".meam(data) - Returns the mean of the list data\n")
     print(".grt(data, high) - Returns the mean of the list data for values greater than value\n")
     print(".grtEqual(data, low) - Returns the mean of the list data for values greater or equal to value\n")
     print(".less(data, high) - Returns the mean of the list data for values less than value\n")
