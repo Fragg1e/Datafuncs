@@ -1,4 +1,5 @@
 from collections import Counter 
+import random
 
 def mean(data):
     """
@@ -117,6 +118,12 @@ def freq(data, value):
             counter += 1
 
     return counter 
+
+def gen(length, low, high):
+    data = []
+    for i in range(length):
+        data.append(random.randint(low, high))
+    return data
     
 
 
