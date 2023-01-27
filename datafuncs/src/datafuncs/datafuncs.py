@@ -1,4 +1,3 @@
-import math
 from collections import Counter 
 
 def mean(data):
