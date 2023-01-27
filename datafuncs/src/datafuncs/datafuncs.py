@@ -105,9 +105,23 @@ def mode(data):
         return None
     else:
         return mode
+
+def freq(data, value):
+    """
+    Returns the Amount of time that a value occurs in the list data
+    """
+    counter = 0
+
+    for i in data:
+        if i == value:
+            counter += 1
+
+    return counter 
     
+
+
 def Help():
-    print(".meam(data) - Returns the mean of the list data\n")
+    print(".mean(data) - Returns the mean of the list data\n")
     print(".grt(data, high) - Returns the mean of the list data for values greater than value\n")
     print(".grtEqual(data, low) - Returns the mean of the list data for values greater or equal to value\n")
     print(".less(data, high) - Returns the mean of the list data for values less than value\n")
@@ -118,5 +132,5 @@ def Help():
     print(".median(data) - Returns the median of the list data\n")
     print(".mode(data) - Returns the mode of the list data - if there is no repition will return 'None' -"
     "If there is equal repitition will return a list of equal values\n")
+    print(".freq(data, value) - Returns the Amount of time that a value occurs in the list data\n")
     print(".Help - Shows you this!\n")
-
