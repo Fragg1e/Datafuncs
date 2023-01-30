@@ -120,6 +120,9 @@ def freq(data, value):
     return counter 
 
 def gen(length, low, high):
+    """
+    Generates a list of random integers between low and high, that is length long
+    """
     data = []
     for i in range(length):
         data.append(random.randint(low, high))
@@ -140,4 +143,5 @@ def Help():
     print(".mode(data) - Returns the mode of the list data - if there is no repition will return 'None' -"
     "If there is equal repitition will return a list of equal values\n")
     print(".freq(data, value) - Returns the Amount of time that a value occurs in the list data\n")
+    print(".gen(length, low, high) - Generates a list of random integers between low and high, that is length long\n")
     print(".Help - Shows you this!\n")
