@@ -164,7 +164,7 @@ def gen(length, low, high, type):
             index = random.randint(1, len(counties))
             data.append(counties[index])
     else:
-        print("Invalid type.  Types are name, number, animal, fruit, vegetable, and county.")
+        data = "Invalid type.  Types are name, number, animal, fruit, vegetable, and county."
             
     return data
 
