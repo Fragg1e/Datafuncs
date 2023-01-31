@@ -1,11 +1,13 @@
 from collections import Counter 
 import random
+import statistics as st
 
 def mean(data):
     """
     Returns the mean of the list data
     """
     Mean = sum(data) / len(data)
+
     return round(Mean, 1)
 
 def grt(data, value):
@@ -58,7 +60,6 @@ def notEqual(data, value):
 
 
 def outlier(data, low, high):
-    
     """
     Removes the outliers from list data
     """
@@ -71,18 +72,14 @@ def imputate(data, low, high):
     """
     Replaces invalid values in the data with the mean of the filtered data.
     """
-    # create a copy of the data without outliers
+
     data_copy = outlier(data, low, high)
-    
-    # compute mean of the filtered data
     mean_val = mean(data_copy)
-    
-    # replace the invalid value with the mean
     
     for i in data:
         if i > high or i < low:
             data[data.index(i)] = round(mean_val, 1)  
-            
+     
     return data
 
 def median(data):
@@ -94,6 +91,7 @@ def median(data):
         median = (data[int(len(data)/2)-1] + data[int(len(data)/2)])/2
     else:
         median = (data[int(len(data)/2)])
+
     return median
 
 def mode(data):
@@ -127,7 +125,26 @@ def gen(length, low, high):
     for i in range(length):
         data.append(random.randint(low, high))
     return data
-    
+  
+def all(data):
+    """
+    Returns everything the script knows about a list
+    """
+    Mean = mean(data)
+    Mode = mode(data)
+    Median = median(data)
+    Freq = freq(data, st.mode(data))
+    string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nFrequency of {str(Mode)}: {Freq}"
+    return string
+
+def range(data):
+    """
+    Returns the range of the list
+    """
+    Min = min(data)
+    Max = max(data)
+    Range = Max - Min
+    return Range
 
 
 def Help():
@@ -144,4 +161,6 @@ def Help():
     "If there is equal repitition will return a list of equal values\n")
     print(".freq(data, value) - Returns the Amount of time that a value occurs in the list data\n")
     print(".gen(length, low, high) - Generates a list of random integers between low and high, that is length long\n")
+    print(".range(data) - Returns the range of the list\n")
+    print(".all(data) - Returns everything the script knows about a list\n")
     print(".Help - Shows you this!\n")
