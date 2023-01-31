@@ -150,13 +150,17 @@ def all(data):
     Returns everything the script knows about a list
     """
     Mean = mean(data)
-    Mode = mode(data)
+    Mode = mode(data) 
     Median = median(data)
     Max = max(data)
     Min = min(data)
-    Freq = freq(data, Mode[0])
     Range = range(data)
-    string = f"Mean: {Mean}\nMode: {Mode[0]}\nFrequency of {str(Mode)}: {Freq}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {Range}"
+    if Mode == None:
+        Freq = None
+        string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {Range}"
+    else:
+        Freq = freq(data, Mode[0])
+        string = f"Mean: {Mean}\nMode: {Mode}\nFrequency of {str(Mode)}: {Freq}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {Range}"
     return string
 
 
