@@ -217,7 +217,7 @@ def help():
     print(".mode(data) - Returns the mode of the list data - if there is no repition will return 'None' -"
     "If there is equal repitition will return a list of equal values\n")
     print(".freq(data, value) - Returns the Amount of times that a value occurs in the list data\n")
-    print(".gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Types are name, number, animal, fruit, vegetable, and counties -" 
+    print(".gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Types are name, number, animal, fruit, vegetable, and county -" 
           "Ignore the low and high values if you are not generating a list of integers\n")
     print(".Range(data) - Returns the range of the list\n")
     print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
