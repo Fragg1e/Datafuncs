@@ -1,6 +1,5 @@
 from collections import Counter 
 import random
-import statistics as st
 
 def mean(data):
     """
@@ -125,7 +124,7 @@ def gen(length, low, high):
     for i in range(length):
         data.append(random.randint(low, high))
     return data
-  
+
 def range(data):
     """
     Returns the range of the list
@@ -134,7 +133,7 @@ def range(data):
     Max = max(data)
     Range = Max - Min
     return Range
-  
+
 def replace(data, old, new):
     """
     Replaces every old value in the list with the new value
@@ -153,11 +152,12 @@ def all(data):
     Mean = mean(data)
     Mode = mode(data)
     Median = median(data)
-    Freq = freq(data, st.mode(data))
+    Max = max(data)
+    Min = min(data)
+    Freq = freq(data, Mode[0])
     Range = range(data)
-    string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nFrequency of {str(Mode)}: {Freq}\nRange: {Range}"
+    string = f"Mean: {Mean}\nMode: {Mode[0]}\nFrequency of {str(Mode)}: {Freq}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {Range}"
     return string
-
 
 
 def help():
