@@ -126,17 +126,6 @@ def gen(length, low, high):
         data.append(random.randint(low, high))
     return data
   
-def all(data):
-    """
-    Returns everything the script knows about a list
-    """
-    Mean = mean(data)
-    Mode = mode(data)
-    Median = median(data)
-    Freq = freq(data, st.mode(data))
-    string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nFrequency of {str(Mode)}: {Freq}"
-    return string
-
 def range(data):
     """
     Returns the range of the list
@@ -145,6 +134,18 @@ def range(data):
     Max = max(data)
     Range = Max - Min
     return Range
+  
+def all(data):
+    """
+    Returns everything the script knows about a list
+    """
+    Mean = mean(data)
+    Mode = mode(data)
+    Median = median(data)
+    Freq = freq(data, st.mode(data))
+    Range = range(data)
+    string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nFrequency of {str(Mode)}: {Freq}\nRange: {Range}"
+    return string
 
 
 def Help():
