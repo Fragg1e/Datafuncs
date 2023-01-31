@@ -3,26 +3,30 @@ Functions for Data Processing
 
 ## Functions
 
-.mean - Returns the mean of a list
+.mean(data) - Returns the mean of a list
 
-.grt - Returns the mean of a list for values greater than specified
+.grt(data, value) - Returns the mean of a list for values greater than specified
 
-.grtEqual - Returns the mean of a list for values greater than or equal to specified
+.grtEqual(data, value) - Returns the mean of a list for values greater than or equal to specified
 
-.less - Returns the mean of a list for values less than specified
+.less(data, value) - Returns the mean of a list for values less than specified
 
-.lessEqual - Returns the mean of a list for values less than or equal to specified
+.lessEqual(data, value) - Returns the mean of a list for values less than or equal to specified
 
-.notEqual - Returns the mean of a list for values not equal to specified
+.notEqual(data, value) - Returns the mean of a list for values not equal to specified
 
-.outlier - Removes the outliers from a list
+.outlier(data, low, high) - Removes the outliers from a list
 
-.imputate - Replaces outliers in a list with the mean of the filtered list.
+.imputate(data, low, high) - Replaces outliers in a list with the mean of the filtered list.
 
-.median - Returns the median of a list
+.median(data) - Returns the median of a list
 
-.mode - Returns the mode of a list
+.mode(data) - Returns the mode of a list
 
-.Help - Prints a list of the above functions and their explanations
+.freq(data, value) - Returns the Amount of time that a value occurs in the list data\n")
+ 
+.gen(length, low, high) - Generates a list of random integers between low and high, that is length long\n")
+
+.Help() - Prints a list of the above functions and their explanations
 
 ### Created by Liam Leonard & Fraser Woodward
