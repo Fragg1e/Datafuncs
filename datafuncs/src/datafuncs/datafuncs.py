@@ -135,6 +135,17 @@ def range(data):
     Range = Max - Min
     return Range
   
+def replace(data, old, new):
+    """
+    Replaces every old value in the list with the new value
+    """
+    for i in data:
+        if i == old:
+            data[data.index(i)] = new
+     
+    return data
+
+  
 def all(data):
     """
     Returns everything the script knows about a list
@@ -148,7 +159,8 @@ def all(data):
     return string
 
 
-def Help():
+
+def help():
     print(".mean(data) - Returns the mean of the list data\n")
     print(".grt(data, high) - Returns the mean of the list data for values greater than value\n")
     print(".grtEqual(data, low) - Returns the mean of the list data for values greater or equal to value\n")
@@ -163,5 +175,6 @@ def Help():
     print(".freq(data, value) - Returns the Amount of time that a value occurs in the list data\n")
     print(".gen(length, low, high) - Generates a list of random integers between low and high, that is length long\n")
     print(".range(data) - Returns the range of the list\n")
+    print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
     print(".all(data) - Returns everything the script knows about a list\n")
-    print(".Help - Shows you this!\n")
+    print(".help - Shows you this!\n")
