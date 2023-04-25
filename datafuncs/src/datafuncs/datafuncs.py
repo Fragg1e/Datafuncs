@@ -1,3 +1,7 @@
+from datafuncs import datafuncs as func
+import numpy as np
+ 
+
 from collections import Counter 
 import random
 
@@ -193,6 +197,13 @@ def replace(data, old, new):
      
     return data
 
+def deviate(data):
+    """
+    Returns the standard deviation of the list to two decimal places
+    """
+    deviate = round(np.std(data), 2)
+    return deviate
+
 def all(data):
     """
     Returns everything the script knows about a list
@@ -203,12 +214,13 @@ def all(data):
     Max = max(data)
     Min = min(data)
     rng = Range(data)
+    deviate = round(np.std(data), 2)
     if Mode == None:
         Freq = None
-        string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {rng}"
+        string = f"Mean: {Mean}\nMode: {Mode}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {rng}\nStandard Deviation: {deviate}"
     else:
         Freq = freq(data, Mode[0])
-        string = f"Mean: {Mean}\nMode: {Mode}\nFrequency of {str(Mode)}: {Freq}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {rng}"
+        string = f"Mean: {Mean}\nMode: {Mode}\nFrequency of {str(Mode)}: {Freq}\nMedian: {Median}\nMax: {Max}\nMin: {Min}\nRange: {rng}\nStandard Deviation: {deviate}"
     return string
 
 
@@ -229,5 +241,6 @@ def help():
           "Ignore the low and high values if you are not generating a list of integers\n")
     print(".Range(data) - Returns the range of the list\n")
     print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
+    print(".deviate(data) - Returns the standard deviation of the list to two decimal places\n")
     print(".all(data) - Returns everything the script knows about a list\n")
     print(".help - Shows you this!\n")
