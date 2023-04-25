@@ -243,4 +243,4 @@ def help():
     print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
     print(".deviate(data) - Returns the standard deviation of the list to two decimal places\n")
     print(".all(data) - Returns everything the script knows about a list\n")
-    print(".help - Shows you this!\n")
+    print(".help() - Shows you this!\n")
