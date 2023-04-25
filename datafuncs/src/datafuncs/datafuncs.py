@@ -1,5 +1,7 @@
 from datafuncs import datafuncs as func
 import numpy as np
+ 
+
 from collections import Counter 
 import random
 
@@ -202,6 +204,15 @@ def deviate(data):
     deviate = round(np.std(data), 2)
     return deviate
 
+def merge(list1, list2):
+    """
+    Merges two lists into tupled lists
+    """
+    merged_list = []
+    for i in range(min(len(list1), len(list2))):
+        merged_list.append((list1[i], list2[i]))
+    return merged_list
+
 def all(data):
     """
     Returns everything the script knows about a list
@@ -240,5 +251,15 @@ def help():
     print(".Range(data) - Returns the range of the list\n")
     print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
     print(".deviate(data) - Returns the standard deviation of the list to two decimal places\n")
+    print(".merge(list1, list2) - Merges two lists into tupled lists\n")
     print(".all(data) - Returns everything the script knows about a list\n")
-    print(".help() - Shows you this!\n")
+    print(".help - Shows you this!\n")
+
+
+
+
+
+
+
+
+
