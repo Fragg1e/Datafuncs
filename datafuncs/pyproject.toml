@@ -5,8 +5,8 @@ build-backend = "hatchling.build"
 name = "datafuncs"
 version = "0.3"
 authors = [
-  { name = "Fraser Woodward", email = "woodwardfraser1@gmail.com"}
-  { name="Liam Leonard", email="liamleonard@outlook.ie" },
+  { name = "Fraser Woodward", email = "woodwardfraser1@gmail.com"},
+  { name="Liam Leonard", email="liamleonard@outlook.ie" }
   
 ]
 description = "Functions for Data Processing"
