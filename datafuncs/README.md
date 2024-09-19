@@ -43,7 +43,7 @@ Functions for Data Processing
 
 .regression(list1, list2, value) - Calculates the regression line for a given value between two lists
 
-.all(data) - Returns everything the script knows about a list
+.all(list1, list2, list3, etc...) - everything the script knows about a list and compares multiple lists 
 
 .Help() - Prints a list of the above functions and their explanations
 
