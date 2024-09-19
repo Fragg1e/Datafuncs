@@ -1,7 +1,6 @@
 from collections import Counter
 import random
 import math
-import scipy.stats as stats
 
 animals = [
     "dog",
