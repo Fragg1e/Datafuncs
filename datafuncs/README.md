@@ -1,21 +1,11 @@
-# Data Funcs
+# Datafuncs
 Functions for Data Processing
 
 ## Functions
 
 .mean(data) - Returns the mean of a list
 
-.grt(data, value) - Returns the mean of a list for values greater than specified
-
-.grtEqual(data, value) - Returns the mean of a list for values greater than or equal to specified
-
-.less(data, value) - Returns the mean of a list for values less than specified
-
-.lessEqual(data, value) - Returns the mean of a list for values less than or equal to specified
-
-.notEqual(data, value) - Returns the mean of a list for values not equal to specified
-
-.outlier(data, low, high) - Removes the outliers from a list
+.setOutlier(data, low, high) - Removes the outliers from a list
 
 .imputate(data, low, high) - Replaces outliers in a list with the mean of the filtered list.
 
@@ -31,8 +21,30 @@ Functions for Data Processing
  
 .gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Ignore the low and high values if you are not generating a list of integers
 
+.stdDev(data) - Returns the standard deviation of the list to two decimal places
+
+.variance(data) - Returns the variance of the list to two decimal places
+
+.iqr(data) - Returns the Interquartile Range of the list data to two decimal places
+
+.zScore(data, value) - Returns the z score of a value using the list data as a dataset
+
+.percentile(z_score) - Returns the percentile of a value using the z score
+
+.outlier(data, zScoreCutoff) -  Automatically removes outliers outside a set z score
+
+.merge(list1, list2) - Merges two lists into tupled lists
+
+.covariance(list1, list2) - Returns the covariance of the two given lists to two decimal places
+
+.correlate(list1, list2) - Returns the correlation coefficient of the two given lists to two decimal places
+    
+.slope(list1, list2) - Calculates the of a linear regression line using the two given lists
+
+.regression(list1, list2, value) - Calculates the regression line for a given value between two lists
+
 .all(data) - Returns everything the script knows about a list
 
 .Help() - Prints a list of the above functions and their explanations
 
-### Created by Liam Leonard & Fraser Woodward
+### Created by Fraser Woodward & Liam Leonard 
