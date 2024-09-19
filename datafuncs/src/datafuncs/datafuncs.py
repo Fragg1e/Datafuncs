@@ -650,58 +650,6 @@ def mean(data):
     return round(Mean, 2)
 
 
-def grt(data, value):
-    """
-    Returns the mean of the list data for values greater than value
-    """
-    data = [i for i in data if i > value]
-    Mean = mean(data)
-
-    return round(Mean, 1)
-
-
-def grtEqual(data, value):
-    """
-    Returns the mean of the list data for values greater or equal to value
-    """
-
-    data = [i for i in data if i >= value]
-    Mean = mean(data)
-
-    return round(Mean, 2)
-
-
-def less(data, value):
-    """
-    Returns the mean of the list data for values less than value
-    """
-
-    data = [i for i in data if i < value]
-    Mean = mean(data)
-
-    return round(Mean, 2)
-
-
-def lessEqual(data, value):
-    """
-    Returns the mean of the list data for values less or equal to value
-    """
-    data = [i for i in data if i <= value]
-    Mean = mean(data)
-
-    return round(Mean, 2)
-
-
-def notEqual(data, value):
-    """
-    Returns the mean of the list data for values not equal to value
-    """
-    data = [i for i in data if i != value]
-    Mean = mean(data)
-
-    return round(Mean, 2)
-
-
 def setOutlier(data, low, high):
     """
     Removes the outliers outside the set values
@@ -897,13 +845,20 @@ def zScore(data, value):
 
 
 def percentile(z_score):
+    """
+    Returns the percentile of a value using the z score
+    """
     
-    p = stats.norm.cdf(z_score)
+    def cdf(z):
+        t = 1 / (1 + 0.2316419 * z**2)
+        cdf = (1 / math.sqrt(2 * math.pi)) * math.exp(-0.5 * z**2) * (1 + t * (-0.318305 * z + t * (0.27886855 * z - t * 1.111111111 * z)))
+        return 1 - cdf if z < 0 else cdf
+
     
-    return p
+    p = cdf(z_score) * 100
+    return round(p, 2)
 
-
-def outlier(data, cutoff=2):
+def outlier(data, z_ScoreCutoff=2):
     """
     Automatically removes outliers outside a set z score
     """
@@ -911,7 +866,7 @@ def outlier(data, cutoff=2):
 
         z = zScore(data, i)
         print(z)
-        if abs(z) > cutoff:
+        if abs(z) > z_ScoreCutoff:
             data.remove(i)
 
     return data
@@ -928,6 +883,10 @@ def merge(list1, list2):
 
 
 def covariance(list1, list2):
+
+    """
+    Returns the covariance of the two given lists to two decimal places
+    """
     if len(list1) != len(list2):
         return 'Lists must be of same length!'
     
@@ -942,6 +901,10 @@ def covariance(list1, list2):
     return round(sum(ls), 2)
 
 def correlate(list1, list2):
+
+    """
+    Returns the correlation coefficient of the two given lists to two decimal places
+    """
     if len(list1) != len(list2):
         return 'Lists must be of same length!'
     
@@ -954,6 +917,10 @@ def correlate(list1, list2):
     return round(correlation, 2)
 
 def slope(list1, list2):
+
+    """
+    Calculates the of a linear regression line using the two given lists
+    """
     if len(list1) != len(list2):
         return 'Lists must be of same length!'
     
@@ -969,6 +936,11 @@ def slope(list1, list2):
     return round(slope, 2)
 
 def regression(list1, list2, value):
+
+    """
+    Calculates the regression line for a given value between two lists
+
+    """
 
     slp = slope(list1, list2)
     
@@ -1041,58 +1013,31 @@ def all(*args):
     line(args)
     
 
-
-
-
-
 def help():
     print(".mean(data) - Returns the mean of the list data\n")
-    print(
-        ".grt(data, high) - Returns the mean of the list data for values greater than value\n"
-    )
-    print(
-        ".grtEqual(data, low) - Returns the mean of the list data for values greater or equal to value\n"
-    )
-    print(
-        ".less(data, high) - Returns the mean of the list data for values less than value\n"
-    )
-    print(
-        ".lessEqual(data, high) - Returns the mean of the list data for values less or equal to value\n"
-    )
-    print(
-        ".notEqual(data, num) - Returns the mean of the list data for values not equal to value\n"
-    )
-    print(
-        ".outlier(data, low, high) -  Removes the outliers outside the set values in the list data\n"
-    )
-    print(
-        ".imputate(data, low, high) - Replaces invalid values in the data with the mean of the filtered list data.\n"
-    )
+    print(".outlier(data, low, high) -  Removes the outliers outside the set values in the list data\n")
+    print(".imputate(data, low, high) - Replaces invalid values in the data with the mean of the filtered list data.\n")
     print(".median(data) - Returns the median of the list data\n")
-    print(
-        ".mode(data) - Returns the mode of the list data - if there is no repition will return 'None' -"
-        "If there is equal repitition will return a list of equal values\n"
-    )
-    print(
-        ".freq(data, value) - Returns the Amount of times that a value occurs in the list data\n"
-    )
-    print(
-        ".gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Types are name, number, animal, fruit, vegetable, country and county -"
-        "Ignore the low and high values if you are not generating a list of integers\n"
-    )
+    print(".mode(data) - Returns the mode of the list data - if there is no repition will return 'None' -""If there is equal repitition will return a list of equal values\n")
+    print(".freq(data, value) - Returns the Amount of times that a value occurs in the list data\n")
+    print(".gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Types are name, number, animal, fruit, vegetable, country and county -""Ignore the low and high values if you are not generating a list of integers\n")
     print(".Range(data) - Returns the range of the list\n")
-    print(
-        ".replace(data, old, new) - Replaces every old value in the list with the new value\n"
-    )
-    print(
-        ".deviate(data) - Returns the standard deviation of the list to two decimal places\n"
-    )
+    print(".replace(data, old, new) - Replaces every old value in the list with the new value\n")
+    print(".stdDev(data) - Returns the standard deviation of the list to two decimal places\n")
+    print(".variance(data) - Returns the variance of the list to two decimal places\n")
+    print(".iqr(data) - Returns the Interquartile Range of the list data to two decimal places\n")
+    print(".zScore(data, value) - Returns the z score of a value using the list data as a dataset\n")
+    print(".percentile(zScore) - Returns the percentile of a value using the z score\n")
+    print(".outlier(data, zScoreCutoff) - Automatically removes outliers outside a set z score\n")
     print(".merge(list1, list2) - Merges two lists into tupled lists\n")
-    print(".all(data) - Returns everything the script knows about a list\n")
+    print(".covariance(list1, list2) - Returns the covariance of the two given lists to two decimal places\n")
+    print(".correlate(list1, list2) - Returns the correlation coefficient of the two given lists to two decimal places\n")
+    print(".slope(list1, list2) - Calculates the slope of a linear regression line using the two given lists\n")
+    print(".regression(list1, list2, value) - Calculates the regression line for a given value between two lists\n")
+    print(".all(list1,list2, list3, etc...) - Returns everything the script knows about a list and compares multiple lists\n")
     print(".help - Shows you this!\n")
 
 
-    
 
 
 
