@@ -1035,11 +1035,4 @@ def help():
     print(".regression(list1, list2, value) - Calculates the regression line for a given value between two lists\n")
     print(".all(list1,list2, list3, etc...) - Returns everything the script knows about a list and compares multiple lists\n")
     print(".help - Shows you this!\n")
-
-
-
-
-
-
-
-
+    
