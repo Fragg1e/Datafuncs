@@ -29,7 +29,7 @@ Functions for Data Processing
 
 .zScore(data, value) - Returns the z score of a value using the list data as a dataset
 
-.percentile(z_score) - Returns the percentile of a value using the z score
+.percentile(zScore) - Returns the percentile of a value using the z score
 
 .outlier(data, zScoreCutoff) -  Automatically removes outliers outside a set z score
 
