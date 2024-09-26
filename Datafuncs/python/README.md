@@ -1,50 +1,143 @@
-# Datafuncs
-Functions for Data Processing
+
+# Python Module Documentation
 
 ## Functions
 
-.mean(data) - Returns the mean of a list
+### 1. mean(data)
+- **Description**: Returns the mean of the list data.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The mean value of the list, rounded to two decimal places.
 
-.setOutlier(data, low, high) - Removes the outliers from a list
+### 2. setOutlier(data, low, high)
+- **Description**: Removes outliers outside the set low and high values.
+- **Arguments**: 
+  - `data` - a list of numeric values.
+  - `low` - the lower bound value.
+  - `high` - the upper bound value.
+- **Returns**: A list with outliers removed.
 
-.imputate(data, low, high) - Replaces outliers in a list with the mean of the filtered list.
+### 3. imputate(data, low, high)
+- **Description**: Replaces invalid values in the data (outside low and high) with the mean of the filtered data.
+- **Arguments**:
+  - `data` - a list of numeric values.
+  - `low` - the lower bound value.
+  - `high` - the upper bound value.
+- **Returns**: A list with invalid values replaced by the mean.
 
-.median(data) - Returns the median of a list
+### 4. median(data)
+- **Description**: Returns the median of the list data.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The median value of the list.
 
-.mode(data) - Returns the mode of a list
+### 5. mode(data)
+- **Description**: Returns the mode (most frequent value) of the list data.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The mode value, or None if all values are unique.
 
-.freq(data, value) - Returns the Amount of times that a value occurs in the list data
+### 6. freq(data, value)
+- **Description**: Returns the frequency (count) of a specific value in the list data.
+- **Arguments**:
+  - `data` - a list of values.
+  - `value` - the value to count.
+- **Returns**: The count of occurrences of the value in the list.
 
-.Range(data) - Returns the range of the list
+### 7. gen(length, low, high, type)
+- **Description**: Generates a list of random values of the specified type and length.
+- **Arguments**:
+  - `length` - the length of the list to generate.
+  - `low` - the lower bound for numeric values (ignored for non-numeric types).
+  - `high` - the upper bound for numeric values (ignored for non-numeric types).
+  - `type` - the type of values to generate (options: 'number', 'animal', 'name', 'fruit', 'vegetable', 'county', 'country').
+- **Returns**: A list of randomly generated values.
 
-.replace(data, old, new) - Replaces every old value in the list with the new value
- 
-.gen(length, low, high, type) - Generates a list of random values of the type specified that is length long - Ignore the low and high values if you are not generating a list of integers
+### 8. Range(data)
+- **Description**: Returns the range (difference between the max and min) of the list.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The range of the list.
 
-.stdDev(data) - Returns the standard deviation of the list to two decimal places
+### 9. replace(data, old, new)
+- **Description**: Replaces every occurrence of `old` value in the list with the `new` value.
+- **Arguments**:
+  - `data` - a list of values.
+  - `old` - the value to be replaced.
+  - `new` - the new value to replace with.
+- **Returns**: The modified list with replaced values.
 
-.variance(data) - Returns the variance of the list to two decimal places
+### 10. stdDev(data)
+- **Description**: Returns the standard deviation of the list.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The standard deviation of the list, rounded to two decimal places.
 
-.iqr(data) - Returns the Interquartile Range of the list data to two decimal places
+### 11. variance(data)
+- **Description**: Returns the variance of the list.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The variance of the list, rounded to two decimal places.
 
-.zScore(data, value) - Returns the z score of a value using the list data as a dataset
+### 12. iqr(data)
+- **Description**: Returns the Interquartile Range (IQR) of the list.
+- **Arguments**: `data` - a list of numeric values.
+- **Returns**: The IQR of the list, rounded to two decimal places.
 
-.percentile(zScore) - Returns the percentile of a value using the z score
+### 13. zScore(data, value)
+- **Description**: Returns the z-score of a specific value in the list, using the list as a dataset.
+- **Arguments**:
+  - `data` - a list of numeric values.
+  - `value` - the value to calculate the z-score for.
+- **Returns**: The z-score of the value.
 
-.outlier(data, zScoreCutoff) -  Automatically removes outliers outside a set z score
+### 14. percentile(z_score)
+- **Description**: Returns the percentile corresponding to a given z-score.
+- **Arguments**: `z_score` - the z-score value.
+- **Returns**: The percentile value, rounded to two decimal places.
 
-.merge(list1, list2) - Merges two lists into tupled lists
+### 15. outlier(data, z_ScoreCutoff=2)
+- **Description**: Automatically removes outliers in the data outside a set z-score cutoff.
+- **Arguments**:
+  - `data` - a list of numeric values.
+  - `z_ScoreCutoff` - the cutoff z-score for defining outliers (default: 2).
+- **Returns**: The list with outliers removed.
 
-.covariance(list1, list2) - Returns the covariance of the two given lists to two decimal places
+### 16. merge(list1, list2)
+- **Description**: Merges two lists into a list of tuples.
+- **Arguments**:
+  - `list1` - the first list.
+  - `list2` - the second list.
+- **Returns**: A list of tuples, where each tuple contains corresponding elements from both lists.
 
-.correlate(list1, list2) - Returns the correlation coefficient of the two given lists to two decimal places
-    
-.slope(list1, list2) - Calculates the of a linear regression line using the two given lists
+### 17. covariance(list1, list2)
+- **Description**: Returns the covariance of two lists.
+- **Arguments**:
+  - `list1` - the first list of numeric values.
+  - `list2` - the second list of numeric values.
+- **Returns**: The covariance between the two lists, rounded to two decimal places.
 
-.regression(list1, list2, value) - Calculates the regression line for a given value between two lists
+### 18. correlate(list1, list2)
+- **Description**: Returns the correlation coefficient between two lists.
+- **Arguments**:
+  - `list1` - the first list of numeric values.
+  - `list2` - the second list of numeric values.
+- **Returns**: The correlation coefficient, rounded to two decimal places.
 
-.all(list1, list2, list3, etc...) - Returns everything the script knows about a list and compares multiple lists
+### 19. slope(list1, list2)
+- **Description**: Calculates the slope of a linear regression line between two lists.
+- **Arguments**:
+  - `list1` - the first list of numeric values.
+  - `list2` - the second list of numeric values.
+- **Returns**: The slope of the linear regression line, rounded to two decimal places.
 
-.Help() - Prints a list of the above functions and their explanations
+### 20. regression(list1, list2, value)
+- **Description**: Calculates the regression line value for a given input using two lists.
+- **Arguments**:
+  - `list1` - the independent variable list (X).
+  - `list2` - the dependent variable list (Y).
+  - `value` - the X-value for which to predict Y.
+- **Returns**: The predicted Y-value for the input X-value.
 
-### Created by Fraser Woodward & Liam Leonard 
+### 21. all(*args)
+- **Description**: Returns a comprehensive statistical analysis for all provided lists and compares multiple lists.
+- **Arguments**: Multiple lists of numeric values.
+- **Returns**: Various statistical measures, including mean, median, mode, standard deviation, variance, range, and more.
+
+### 22. help()
+- **Description**: Prints a summary of all available functions and their usage.
+
